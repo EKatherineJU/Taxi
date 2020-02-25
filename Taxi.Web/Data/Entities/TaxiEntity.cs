@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Taxi.Web.Data.Entities
 {
@@ -10,6 +11,8 @@ namespace Taxi.Web.Data.Entities
         [RegularExpression(@"^([A-Za-z]{3}\d{3})$", ErrorMessage = "The field {0} must have three characters and three numbers.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         public string Plaque { get; set; }
+
+        public ICollection<TripEntity> Trips { get; set; }
 
     }
 }
