@@ -15,25 +15,25 @@
                      Padding="5">
 
             <StackLayout Orientation="Horizontal">
-                    <Label Text="Plaque"
-                           VerticalOptions="Center"/>
-                    <Entry HorizontalOptions="FillAndExpand" 
-                           Placeholder="Enter plaque..." 
-                           Text="{Binding Plaque}"
-                           VerticalOptions="Center"/>
-                    <Button Command="{Binding CheckPlaqueCommand}"
-                            Margin="10,0"
-                            Text="Check Plaque"/>
-                </StackLayout>
-                    <rating:SfRating HorizontalOptions="Center" 
-                                     IsEnabled="False"
-                                     Margin="0,5"
-                                     Precision="Exact"
-                                     Value="{Binding Taxi.Qualification}" />
+                <Label Text="Plaque"
+                               VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand" 
+                               Placeholder="Enter plaque..." 
+                               Text="{Binding Plaque}"
+                               VerticalOptions="Center"/>
+                <Button Command="{Binding CheckPlaqueCommand}"
+                                Margin="10,0"
+                                Text="Check Plaque"/>
+            </StackLayout>
+                <rating:SfRating HorizontalOptions="Center" 
+                                 Margin="0,5"
+                                 Precision="Exact"
+                                 Value="{Binding Taxi.Qualification}" />
                     <Label FontAttributes="Bold" 
                            FontSize="Large"
                            HorizontalOptions="Center"
                            Text="{Binding Taxi.Qualification, StringFormat='Qualification: {0:N2}'}"/>
+
             <StackLayout Orientation="Horizontal">
                     <Label Text="Number of trips:"/>
                     <Label Text="{Binding Taxi.NumberOfTrips, StringFormat='{0:N0}'}"/>
