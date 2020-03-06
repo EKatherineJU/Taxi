@@ -4,6 +4,8 @@
              xmlns:prism="http://prismlibrary.com"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" 
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
              x:Class="Taxi.Prism.Views.HomePage"
              BackgroundColor="{StaticResource ColorBackgroud}"
              Title = "{Binding Title}">
