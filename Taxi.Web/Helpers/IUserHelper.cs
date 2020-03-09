@@ -7,6 +7,10 @@ namespace Taxi.Web.Helpers
 {
     public interface IUserHelper
     {
+        Task<IdentityResult> ChangePasswordAsync(UserEntity user, string oldPassword, string newPassword);
+
+        Task<IdentityResult> UpdateUserAsync(UserEntity user);
+
         Task<UserEntity> GetUserByEmailAsync(string email);
 
         Task<IdentityResult> AddUserAsync(UserEntity user, string password);
@@ -21,6 +25,8 @@ namespace Taxi.Web.Helpers
 
         Task LogoutAsync();
 
+        Task<UserEntity> AddUserAsync(AddUserViewModel model, string path);
+               
     }
 }
 
