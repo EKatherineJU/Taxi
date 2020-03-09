@@ -36,7 +36,7 @@ namespace Taxi.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userHelper.GetUserByEmailAsync(User.Identity.Name);                
+                var user = await _userHelper.GetUserAsync(User.Identity.Name);                
                 var result = await _userHelper.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
 
                 if (result.Succeeded)
@@ -54,7 +54,7 @@ namespace Taxi.Web.Controllers
 
         public async Task<IActionResult> ChangeUser()
         {
-            UserEntity user = await _userHelper.GetUserByEmailAsync(User.Identity.Name);
+            UserEntity user = await _userHelper.GetUserAsync(User.Identity.Name);
            
             EditUserViewModel model = new EditUserViewModel
             {
@@ -82,7 +82,7 @@ namespace Taxi.Web.Controllers
                     path = await _imageHelper.UploadImageAsync(model.PictureFile, "Users");
                 }
 
-                UserEntity user = await _userHelper.GetUserByEmailAsync(User.Identity.Name);
+                UserEntity user = await _userHelper.GetUserAsync(User.Identity.Name);
 
                 user.Document = model.Document;
                 user.FirstName = model.FirstName;
