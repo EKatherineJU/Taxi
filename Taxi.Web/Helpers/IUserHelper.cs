@@ -8,6 +8,7 @@ namespace Taxi.Web.Helpers
 {
     public interface IUserHelper
     {
+                            
         Task<IdentityResult> ChangePasswordAsync(UserEntity user, string oldPassword, string newPassword);
 
         Task<IdentityResult> UpdateUserAsync(UserEntity user);
@@ -25,6 +26,8 @@ namespace Taxi.Web.Helpers
         Task<bool> IsUserInRoleAsync(UserEntity user, string roleName);
 
         Task<SignInResult> LoginAsync(LoginViewModel model);
+
+        Task<SignInResult> ValidatePasswordAsync(UserEntity user, string password);
 
         Task LogoutAsync();
 
