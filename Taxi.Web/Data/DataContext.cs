@@ -13,7 +13,8 @@ namespace Taxi.Web.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options)
 
         {
-        }
+
+        }        
 
         public DbSet<TaxiEntity> Taxis { get; set; }
 
@@ -22,6 +23,10 @@ namespace Taxi.Web.Data
         public DbSet<TripDetailEntity> TripDetails { get; set; }
 
         public DbSet<UserGroupEntity> UserGroups { get; set; }
+
+        public DbSet<UserGroupDetailEntity> UserGroupDetails { get; set; }
+
+        public DbSet<UserGroupRequestEntity> UserGroupRequests { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
